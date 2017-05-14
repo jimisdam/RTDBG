@@ -74,7 +74,7 @@ gulp.task('commit', function() {
 
 	return gulp.src(options.GIT_SOURCE)
 		.pipe(git.add())
-		.pipe(git.commit('Updating ' + obj.name + " => " + obj.version));
+		.pipe(git.commit('Updating ' + obj.name + " -> " + obj.version));
 });
 
 gulp.task('push', function() {

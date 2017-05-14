@@ -1,0 +1,15 @@
+{
+  "channels": [{
+    "channelName": "Main",
+    "events": [
+      "Event 1",
+      "Event 2"
+    ]
+  }],
+  "appID": "321323",
+  "appKey": "12321321",
+  "secret": "3123123",
+  "handle": "sdasdasd",
+  "uid": "sdasdasd",
+  "isSecure": "true"
+}

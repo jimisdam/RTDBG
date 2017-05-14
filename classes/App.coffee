@@ -1,8 +1,18 @@
 fs = require 'fs'
+config = require 'config'
 
 class App
 
   constructor: (data) ->
+    @uid    = null
+    @appID  = null
+    @appKey = null
+    @secret = null
+    @handle = null
+    @uid    = null
+    @isSecure = null
+    @channels = []
+
     if data
       @appID = data.appID
       @appKey = data.appKey
@@ -10,11 +20,22 @@ class App
       @handle = data.handle
       @uid = data.uid
       @isSecure = data.isSecure
+      @channels = data.channels
     return @
 
-
   save: () ->
-
+    obj_str = JSON.stringify @
+    fs.writeFileSync './data/apps/' + @uid + '.json', obj_str, 'utf8', (err) ->
+      if err
+        return console.log(err)
     return
+
+  load: () ->
+    if fs.existsSync './data/apps/' + @uid + '.json'
+      obj_str = fs.readFileSync './data/apps/' + @uid + '.json'
+      obj = JSON.parse obj_str
+      return new App(obj)
+
+  @all: () ->
 
 module.exports = App
