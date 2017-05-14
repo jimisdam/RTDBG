@@ -25,5 +25,5 @@ this.save_app = function() {
   data.isSecure = $("input[name='new-app-issecure']").val();
   data.uid = sanitize(data.handle);
   app = new App(data);
-  return console.log(app);
+  return console.log(JSON.stringify(app));
 };

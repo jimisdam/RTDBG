@@ -23,4 +23,4 @@ $ ->
   data.uid = sanitize(data.handle)
 
   app = new App(data)
-  console.log(app)
+  console.log(JSON.stringify(app))
