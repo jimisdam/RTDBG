@@ -1,8 +1,10 @@
-var App, ipcRenderer, sanitize;
+var App, AppMenu, ipcRenderer, sanitize;
 
 ipcRenderer = require('electron').ipcRenderer;
 
 App = require('./assets/dist/js/classes/App.js');
+
+AppMenu = require('./assets/dist/js/classes/AppMenu.js');
 
 sanitize = require('./assets/dist/js/helpers/Sanitize.js');
 
@@ -26,5 +28,6 @@ this.save_app = function() {
   data.uid = sanitize(data.handle);
   app = new App(data);
   app.save();
+  AppMenu.add(app);
   return console.log(JSON.stringify(app));
 };

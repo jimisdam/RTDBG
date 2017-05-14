@@ -37,5 +37,12 @@ class App
       return new App(obj)
 
   @all: () ->
+    apps = []
+    files = fs.readdirSync './data/apps/'
+    for file in files
+      obj_str = fs.readFileSync './data/apps/' + file
+      obj = JSON.parse obj_str
+      apps.push(new App(obj))
+    return apps
 
 module.exports = App

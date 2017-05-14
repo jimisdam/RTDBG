@@ -45,7 +45,18 @@ App = (function() {
     }
   };
 
-  App.all = function() {};
+  App.all = function() {
+    var apps, file, files, i, len, obj, obj_str;
+    apps = [];
+    files = fs.readdirSync('./data/apps/');
+    for (i = 0, len = files.length; i < len; i++) {
+      file = files[i];
+      obj_str = fs.readFileSync('./data/apps/' + file);
+      obj = JSON.parse(obj_str);
+      apps.push(new App(obj));
+    }
+    return apps;
+  };
 
   return App;
 

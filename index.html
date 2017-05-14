@@ -11,6 +11,7 @@
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
     <script src="./assets/dist/js/index.js"></script>
+
   </head>
   <body>
     <div class="window">
@@ -45,19 +46,9 @@
       <div class="window-content">
         <div class="pane-group">
           <div class="pane pane-sm sidebar">
-            <nav class="nav-group">
+            <nav class="nav-group" id="apps">
 
-              <div class="app_item" data-app="app_1">
-                <h5 class="nav-group-title">App 1</h5>
-                <div class="app_channels">
-                  <div class="app_channel" data-channel="main">
-                    <span class="nav-group-item active">
-                      <span class="icon icon-right-open"></span>
-                      Main
-                    </span>
-                  </div>
-                </div>
-              </div>
+              
 
             </nav>
           </div>
@@ -93,3 +84,17 @@
 
   </body>
 </html>
+
+<div id="app-template" style="display:none">
+  <div class="app_item" data-app="{app-uid}">
+    <h5 class="nav-group-title">{app-name}</h5>
+    <div class="app_channels">
+      <div class="app_channel" data-channel="main">
+        <span class="nav-group-item">
+          <span class="icon icon-right-open"></span>
+          Main
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

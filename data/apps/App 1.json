@@ -4,6 +4,7 @@
   "appKey": "4af81c54f0373db1da43",
   "secret": "c215e193db47874e2048",
   "isSecure": true,
+  "uid": "my-awesome-app",
   "channels": [
     {
       "channelName": "Main",

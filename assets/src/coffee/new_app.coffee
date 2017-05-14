@@ -1,5 +1,6 @@
 ipcRenderer   = require('electron').ipcRenderer
 App           = require './assets/dist/js/classes/App.js'
+AppMenu       = require './assets/dist/js/classes/AppMenu.js'
 sanitize      = require './assets/dist/js/helpers/Sanitize.js'
 
 $ ->
@@ -24,4 +25,5 @@ $ ->
 
   app = new App(data)
   app.save()
+  AppMenu.add(app)
   console.log(JSON.stringify(app))
