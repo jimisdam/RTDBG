@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/meletisf/RTDBG",
   "keywords": [
     "Electron",
     "Debugger",
@@ -18,7 +18,7 @@
     "url": "https://meletisf.me/"
   },
   "bugs": {
-    "url": "",
+    "url": "https://github.com/meletisf/RTDBG/issues",
     "email": "m.flevarakis@acg.edu"
   },
   "license": "CC0-1.0",

@@ -1,8 +1,10 @@
-var App, ipcRenderer;
+var App, ipcRenderer, sanitize;
 
 ipcRenderer = require('electron').ipcRenderer;
 
 App = require('./assets/dist/js/classes/App.js');
+
+sanitize = require('./assets/dist/js/helpers/Sanitize.js');
 
 $(function() {
   $("#cancel-new-app").click(function() {
@@ -10,12 +12,18 @@ $(function() {
   });
   $("#save-new-app").click(function() {
     save_app();
-    ipcRenderer.send('hide-new-app-window');
   });
 });
 
 this.save_app = function() {
-  var app, appID;
-  app = new App();
-  return appID = $("input[name='']").val();
+  var app, data;
+  data = {};
+  data.appID = $("input[name='new-app-appid']").val();
+  data.appKey = $("input[name='new-app-appkey']").val();
+  data.secret = $("input[name='new-app-secret']").val();
+  data.handle = $("input[name='new-app-handle']").val();
+  data.isSecure = $("input[name='new-app-issecure']").val();
+  data.uid = sanitize(data.handle);
+  app = new App(data);
+  return console.log(app);
 };

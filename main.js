@@ -15,6 +15,7 @@ require('electron-debug')({showDevTools: false});
 
 let mainWindow = null
 let newAppWindow = null
+let preferencesWindow = null
 
 function createWindow () {
   // Create the browser window.
@@ -39,6 +40,7 @@ function createWindow () {
   mainWindow.on('closed', function () {
     mainWindow = null
     newAppWindow = null
+    preferencesWindow = null
   })
 
 }
@@ -69,8 +71,7 @@ app.on('activate', function () {
 // ipc events
 ipcMain.on('show-new-app-window', function() {
 
-  if(newAppWindow != null)
-  {
+  if(newAppWindow != null) {
     newAppWindow.destroy();
   }
 
@@ -89,4 +90,28 @@ ipcMain.on('show-new-app-window', function() {
 
 ipcMain.on('hide-new-app-window', function() {
   newAppWindow.destroy()
+})
+
+ipcMain.on('show-preferences-window', function() {
+
+  if(preferencesWindow != null) {
+    preferencesWindow.destroy()
+  }
+
+  preferencesWindow = new BrowserWindow({
+    width: 400,
+    height: 400,
+    'minWidth': 400,
+    'minHeight': 400,
+    show: false,
+    frame: false
+  })
+
+  preferencesWindow.loadURL('file://' + __dirname + '/preferences.html')
+  preferencesWindow.show();
+
+})
+
+ipcMain.on('hide-preferences-window', function() {
+  preferencesWindow.hide()
 })

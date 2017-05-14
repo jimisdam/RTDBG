@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <title>Show Preferences</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/dist/css/photon.min.css">
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="./assets/dist/js/preferences.js"></script>
+
+  </head>
+  <body>
+
+    <div class="window">
+
+      <header class="toolbar toolbar-header" style="-webkit-app-region: drag">
+        <h1 class="title">Show Preferences</h1>
+      </header>
+
+      <div class="window-content preferences-container">
+
+        <div class="window-content">
+          <div class="pane-group">
+            <div class="pane pane-sm sidebar">
+              <nav class="nav-group">
+                <h5 class="nav-group-title">Preferences</h5>
+                <a class="nav-group-item active">
+                  <span class="icon icon-home"></span>
+                  General
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- .window-content -->
+
+      <footer class="toolbar toolbar-footer">
+        <div class="toolbar-actions">
+          <button class="btn btn-default" id="close-preferences">
+            Close
+          </button>
+
+          <button class="btn btn-primary pull-right" id="save-preferences">
+            Save
+          </button>
+        </div>
+      </footer>
+
+    </div> <!-- .window -->
+
+  </body>
+</html>
