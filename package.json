@@ -1,0 +1,38 @@
+{
+  "name": "rt-debugger",
+  "version": "1.0.0",
+  "description": "A Real Time Debugger",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "Debugger",
+    "Pusher"
+  ],
+  "author": {
+    "name": "Meletios Flevarakis",
+    "email": "m.flevarakis@acg.edu",
+    "url": "https://meletisf.me/"
+  },
+  "bugs": {
+    "url": "",
+    "email": "m.flevarakis@acg.edu"
+  },
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.6.2",
+    "electron-debug": "^1.1.0",
+    "electron-reload": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.3.0",
+    "gulp-coffee": "^2.3.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-watch": "^4.3.11",
+    "merge2": "^1.0.3"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "handle": "My Awesome App",
+  "pusher": {
+    "appID": "338969",
+    "appKey": "4af81c54f0373db1da43",
+    "secret": "c215e193db47874e2048",
+    "isSecure": true
+  },
+  "channels": [
+    {
+      "channelName": "Main",
+      "events": [
+        "Event 1",
+        "Event 2"
+      ]
+    }
+  ]
+}
