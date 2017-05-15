@@ -1,6 +1,6 @@
 {
   "name": "rt-debugger",
-  "version": "0.0.3-18",
+  "version": "0.0.3-19",
   "description": "A Real Time Debugger",
   "main": "main.js",
   "scripts": {
