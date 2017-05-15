@@ -9,7 +9,7 @@ $ ->
     return
   $("#save-new-app").click ->
     save_app()
-    #ipcRenderer.send 'hide-new-app-window'
+    ipcRenderer.send 'hide-new-app-window'
     return
   return
 
@@ -25,5 +25,3 @@ $ ->
 
   app = new App(data)
   app.save()
-  AppMenu.add(app)
-  console.log(JSON.stringify(app))

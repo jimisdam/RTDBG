@@ -28,7 +28,7 @@ class App
     fs.writeFileSync './data/apps/' + @uid + '.json', obj_str, 'utf8', (err) ->
       if err
         return console.log(err)
-    return
+    return @
 
   load: () ->
     if fs.existsSync './data/apps/' + @uid + '.json'

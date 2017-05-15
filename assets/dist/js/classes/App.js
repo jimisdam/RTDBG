@@ -34,6 +34,7 @@ App = (function() {
         return console.log(err);
       }
     });
+    return this;
   };
 
   App.prototype.load = function() {
