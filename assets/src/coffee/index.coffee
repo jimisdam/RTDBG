@@ -13,7 +13,7 @@ $ ->
     return
   return
 
-
+# Watch for new files and update the UI
 chokidar.watch('./data/apps/*.json',
   cwd: __dirname
 ).on 'all', (event, path) ->
