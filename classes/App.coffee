@@ -36,6 +36,11 @@ class App
       obj = JSON.parse obj_str
       return new App(obj)
 
+  remove: () ->
+    if fs.existsSync './data/apps/' + @uid + '.json'
+      fs.unlink './data/apps/' + @uid + '.json'
+    return
+
   @all: () ->
     apps = []
     files = fs.readdirSync './data/apps/'

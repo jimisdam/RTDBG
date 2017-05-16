@@ -46,6 +46,12 @@ App = (function() {
     }
   };
 
+  App.prototype.remove = function() {
+    if (fs.existsSync('./data/apps/' + this.uid + '.json')) {
+      fs.unlink('./data/apps/' + this.uid + '.json');
+    }
+  };
+
   App.all = function() {
     var apps, file, files, i, len, obj, obj_str;
     apps = [];
