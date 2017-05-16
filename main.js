@@ -15,6 +15,7 @@ require('electron-debug')({showDevTools: false});
 
 let mainWindow = null
 let newAppWindow = null
+let removeAppWindow = null
 let preferencesWindow = null
 
 function createWindow () {
@@ -90,6 +91,29 @@ ipcMain.on('show-new-app-window', function() {
 
 ipcMain.on('hide-new-app-window', function() {
   newAppWindow.destroy()
+})
+
+ipcMain.on('show-remove-app-window', function() {
+
+  if(removeAppWindow != null) {
+    removeAppWindow.destroy();
+  }
+
+  removeAppWindow = new BrowserWindow({
+    width: 400,
+    height: 200,
+    'minWidth': 400,
+    'minHeight': 200,
+    show: false,
+    frame: false
+  })
+  removeAppWindow.loadURL('file://' + __dirname + '/remove_app.html')
+  removeAppWindow.show()
+
+})
+
+ipcMain.on('hide-remove-app-window', function() {
+  removeAppWindow.destroy()
 })
 
 ipcMain.on('show-preferences-window', function() {

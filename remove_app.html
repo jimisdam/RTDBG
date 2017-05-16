@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <title>Remove Pusher app</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/dist/css/photon.min.css">
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="./assets/dist/js/remove_app.js"></script>
+
+  </head>
+  <body>
+
+    <div class="window">
+
+      <header class="toolbar toolbar-header" style="-webkit-app-region: drag">
+        <h1 class="title">Remove Pusher app</h1>
+      </header>
+
+      <div class="window-content new-app-container">
+
+        <form id="remove-app-form">
+          <div class="form-group">
+            <label>Application</label>
+            <!-- <input type="text" name="new-app-appid" class="form-control" placeholder="Ex. 169289"> -->
+            <select title="Application" name="remove-app-select" class="form-control" id="remove-app-select">
+            </select>
+          </div>
+        </form>
+
+      </div> <!-- .window-content -->
+
+      <footer class="toolbar toolbar-footer">
+        <div class="toolbar-actions">
+          <button class="btn btn-default" id="cancel-remove-app">
+            Cancel
+          </button>
+
+          <button class="btn btn-primary pull-right" id="remove-app">
+            Remove
+          </button>
+        </div>
+      </footer>
+
+    </div> <!-- .window -->
+
+  </body>
+</html>
